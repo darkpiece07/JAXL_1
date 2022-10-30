@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome | OTP</title>
+
+
+    <style>
+        
+        body{
+            background-color: rgb(205, 222, 222);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: rgb(30, 30, 33);
+            font-size: 20px;
+            background-color: bisque;
+        }
+        .main-otp{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 70vh;
+        }
+        .form1{
+            margin-right: 20px;
+            height: 90%;
+            width: 30%;
+            border: 2px solid rgb(139, 74, 74);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 5px;
+            background-color: rgba(199, 181, 181, 0.384);
+        }
+        .form2{
+            margin-left: 20px;
+            height: 90%;
+            width: 30%;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            background-color: rgba(198, 167, 167, 0.384);
+        }
+
+        .inp{
+            width: 220px;
+            height: 28px;
+            border: none;
+            color: rgb(8, 0, 120);
+            font-size: medium;
+            border-radius: 5px;
+        }
+        .btn{
+            width: 100px;
+            height: 30px;
+            border: 1px;
+            border-radius: 8px;
+            background-color: rgb(72, 35, 255);
+            color: white;
+            cursor: pointer;
+        }
+        
+    </style>
+    
+</head>
+
+<body>
+    <div class="main-otp">
+        <form method="POST" action="verify" class="form1">
+            <div >
+                <input class="inp" type="text" name="otp" placeholder="Enter OTP" autocomplete="off" required="true" >
+            </div>
+            <div>
+                <h3>{{msg}}</h3>
+            </div>
+            <label for="html">Enter your custom username here : </label>
+            <input class="inp" type="text" name="email" required="true" value={{email}}>
+            <br>
+            <input class="btn" type="submit" name="signin" value="Log in">
+        </form>
+        <form method="POST" action="resend" class="form2">
+            <div>
+                <label for="html">Check terminal for OTP : </label>
+                <input class="inp" type="email" name="email" required="true" value={{email}}>
+                <br>
+                <input class="btn" type="submit" name="signin" value="Resend OTP">
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
